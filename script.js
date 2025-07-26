@@ -4,26 +4,22 @@ const DIRECCION_TIENDA = "Pasaje 47 Casa 2156";
 
 let carrito = [];
 
-// Agregar empanada (Napolitana y Queso)
 function agregarAlCarrito(tipo, coccion) {
   carrito.push({ tipo, coccion });
   actualizarCarrito();
 }
 
-// Agregar empanada de Pino con cocción
 function agregarEmpanadaPino() {
   const coccion = document.getElementById("tipoPino").value;
   carrito.push({ tipo: "Pino", coccion });
   actualizarCarrito();
 }
 
-// Eliminar empanada del carrito
 function eliminarDelCarrito(indice) {
   carrito.splice(indice, 1);
   actualizarCarrito();
 }
 
-// Actualizar carrito visualmente
 function actualizarCarrito() {
   const lista = document.getElementById("lista-carrito");
   const totalCarrito = document.getElementById("total-carrito");
@@ -62,8 +58,6 @@ function cambiarEntrega() {
     direccionTienda.style.display = "none";
   }
 }
-
-// Enviar pedido a WhatsApp
 function enviarPedido() {
   const direccionInput = document.getElementById("direccion");
   const entrega = document.getElementById("entrega").value;
